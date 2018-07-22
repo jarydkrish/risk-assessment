@@ -42,6 +42,9 @@ gem 'api-pagination'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# We are ready to setup AWS for ActiveStorage
+gem 'aws-sdk-s3'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
