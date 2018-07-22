@@ -1,0 +1,8 @@
+AllCops:
+  TargetRailsVersion: 5.2
+Rails:
+  Enabled: true
+Style/WordArray:
+  EnforcedStyle: brackets
+Style/SymbolArray:
+  EnforcedStyle: brackets
