@@ -2,6 +2,7 @@
   "name": "Risk Assessment",
   "description": "A simple risk assessment form system",
   "repository": "https://github.com/jarydkrish/risk-assessment",
+  "stack": "heroku-18",
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
