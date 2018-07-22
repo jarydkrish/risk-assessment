@@ -1,6 +1,12 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 # We use webpacker, so we don't need the assets pipeline
 Rails.application.config.assets.enabled = false
+
+Rails.application.config.generators do |g|
+  g.assets false
+end
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
