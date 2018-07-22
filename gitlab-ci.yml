@@ -1,0 +1,18 @@
+image: "ruby:2.5"
+services:
+  - postgres:latest
+variables:
+  DATABASE_URL: postgres://runner:password@postgres/risk-assessment_test
+  POSTGRES_DB: risk-assessment_test
+  POSTGRES_USER: runner
+  POSTGRES_PASSWORD: password
+before_script:
+  - apt-get update -qq && apt-get install -y -qq postgresql postgresql-contrib libpq-dev cmake
+  - ruby -v
+  - which ruby
+  - gem install bundler --no-ri --no-rdoc
+  - RAILS_ENV=test bundle install --jobs $(nproc) "${FLAGS[@]}"
+  - RAILS_ENV=test bundle exec rake db:create db:schema:load
+rspec:
+  script:
+    - RAILS_ENV=test bundle exec rspec
