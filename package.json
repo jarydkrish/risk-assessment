@@ -17,6 +17,9 @@
     "reactstrap": "^6.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.10.0",
     "webpack": "^3.0.0",
     "webpack-dev-server": "2.11.2"
   }

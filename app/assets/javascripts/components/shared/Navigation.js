@@ -31,7 +31,9 @@ export default class Navigation extends Component {
   render() {
     return (
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Risk Assessment</NavbarBrand>
+        <NavbarBrand href="/">
+          Risk Assessment
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>

@@ -17,7 +17,7 @@ export default class Home extends Component {
       this.setState({ loading: false });
       this.setState({ types: response.data });
     }).catch(error => {
-      console.error(error)
+      console.error(error);
       this.setState({ error: true });
     });
   }
@@ -34,7 +34,7 @@ export default class Home extends Component {
           <p className="lead">LOADING...</p>
         )}
         <ul>
-          {types.map(type => (<li>{type.name}</li>))}
+          {types.map(type => (<li key={type.id}>{type.name}</li>))}
         </ul>
       </div>
     );
