@@ -3,8 +3,10 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.1.2",
+    "caniuse-lite": "^1.0.30000697",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
@@ -15,6 +17,7 @@
     "reactstrap": "^6.3.0"
   },
   "devDependencies": {
+    "webpack": "^3.0.0",
     "webpack-dev-server": "2.11.2"
   }
 }

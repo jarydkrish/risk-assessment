@@ -1,20 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { AppContainer } from 'react-hot-loader';
+import axios from 'axios';
+import React, { Component } from 'react';
 
-const Home = props => (
-  <AppContainer>
-    <div>Hello {props.name}!</div>
-  </AppContainer>
-);
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: false,
+      loading: true,
+      types: [],
+    }
+  }
 
-Home.defaultProps = {
-  name: 'Jaryd'
-};
+  componentDidMount() {
+    axios.get('/api/drug_types').then(response => {
+      console.log(response);
+      this.setState({ loading: false });
+      this.setState({ types: response.data });
+    }).catch(error => {
+      console.error(error)
+      this.setState({ error: true });
+    });
+  }
 
-Home.propTypes = {
-  name: PropTypes.string
-};
-
-export default Home;
+  render() {
+    const { error, loading, types } = this.state;
+    return (
+      <div className="col-12">
+        {error && (
+          <p className="alert alert-danger">Error</p>
+        )}
+        <h1>These are all the drug types</h1>
+        {loading && (
+          <p className="lead">LOADING...</p>
+        )}
+        <ul>
+          {types.map(type => (<li>{type.name}</li>))}
+        </ul>
+      </div>
+    );
+  }
+}
